@@ -93,7 +93,7 @@ const quizData = [
   
     {
         "question": "What’s the most important book in the Moslem religion?",
-        "optionA": "The Koran",
+        "optionA": "The Quran",
         "optionB": "The Dictionary",
         "optionC": "The Bible",
         "optionD": "The Chemistry text Book",

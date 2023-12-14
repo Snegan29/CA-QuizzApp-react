@@ -11,7 +11,7 @@ class QuizComponent extends Component {
       theme: 'light',
       highlight: 'black',
       isHighlighted: false,
-      quizScores: [/* Add actual quiz scores here */],
+      quizScores:
     };
   }
 

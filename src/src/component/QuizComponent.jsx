@@ -48,7 +48,7 @@ class QuizComponent extends Component {
   };
 
   calculatePercentile = () => {
-    const { score, quizScores } = this.state;
+    const { score } = this.state;
     var percentile = (score/quizData.length)*100
     return percentile;
   };
@@ -73,24 +73,27 @@ class QuizComponent extends Component {
           <p className='noOfQuestions'>
             {currentQuestionIndex}/{quizData.length}{' '}
           </p>
+          {/* If the all the questions are dislayed, it goes to the else part to show the result. */}
           <div>
             {currentQuestionIndex < quizData.length ? (
               <div>
+                {/* To highlight the questions */}
                 <h2 className={isHighlighted ? 'highlighted-question' : ''}>
                   {quizData[currentQuestionIndex].question}
                 </h2>
                 <div className='optionBtns'>
+                  {/* A,B,C,D are the four variables that are mapped to 4 keys and values(options) */}
                   {['A', 'B', 'C', 'D'].map((option) => (
                     <button
                       key={option}
                       id='optionBtn'
                       onClick={() =>
+                        // option here is the key and A,B,C,D are the option(A or B or c or D)
                         this.handleOptionSelect(quizData[currentQuestionIndex][`option${option}`])
                       }
                       className={
                         selectedOption === quizData[currentQuestionIndex][`option${option}`]
-                          ? 'selected'
-                          : ''
+                          ? 'selected': ''
                       }
                       disabled={selectedOption !== null}
                     >
@@ -109,6 +112,7 @@ class QuizComponent extends Component {
                 </div>
               </div>
             ) : (
+              // The ELSE part where output is displayed
               <div>
                 <h1>Quiz Completed</h1>
                 <h2>Your Final Score: {score} ({this.calculatePercentile().toFixed(2)}%)</h2>

@@ -1,7 +1,7 @@
 import React from 'react'
 import QuizComponent from './component/QuizComponent'
 import quizData from './component/Questions'
-// import './src/App.css'
+import './App.css'
 
 export default function () {
   return (
